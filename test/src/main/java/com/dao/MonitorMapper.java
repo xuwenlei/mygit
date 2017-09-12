@@ -1,0 +1,18 @@
+package com.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Select;
+
+import com.entities.Monitor;
+
+public interface MonitorMapper {
+	
+	@Select("select mid,name,timeStart,timeEnd,type,keywords keyWords,exclude_words excludeWords,"
+			+ "status,count,add_count addCount,trend_7days trend7days,record_tablename recordTableName,"
+			+ "hotword_tablename hotwordTableName,warning_nega_percent warningNegaPercent,warning_nega_count warningNegaCount,"
+			+ "warning_count warningCount,warning_word warningWord, warning_result_desc warningResultDesc,push_mode pushMode,"
+			+ "phone_num phoneNum,email,lasttime lastTime from monitor where timeEnd > now()")
+	public List<Monitor> getAll();
+	
+}
