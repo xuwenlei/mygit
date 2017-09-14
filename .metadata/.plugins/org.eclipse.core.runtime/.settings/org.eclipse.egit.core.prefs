@@ -1,4 +1,6 @@
-GitRepositoriesView.GitDirectories=/home/xwl/.git\:
-GitRepositoriesView.GitDirectories.relative=/home/xwl/.git\:
+GitRepositoriesView.GitDirectories=/home/xwl/workspace/.git\:/home/xwl/.git\:
+GitRepositoriesView.GitDirectories.relative=.git\:/home/xwl/.git\:
+RepositorySearchDialogDeepSearch=false
+RepositorySearchDialogSearchPath=/home/xwl/workspace
 core_auto_stage_moves=false
 eclipse.preferences.version=1

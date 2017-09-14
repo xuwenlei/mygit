@@ -1,13 +1,13 @@
-package com.xwl;
+package com.test;
 
 import redis.clients.jedis.Jedis;
 
-public class RedisDemo {
+public class RedisTest {
 
 	private final Jedis client = new Jedis("localhost");
 
 	public static void main(String[] args) {
-		RedisDemo redisDemo = new RedisDemo();
+		RedisTest redisDemo = new RedisTest();
 		redisDemo.client.flushAll();
 		//		redisDemo.stringDemo();
 		//		redisDemo.listDemo();
