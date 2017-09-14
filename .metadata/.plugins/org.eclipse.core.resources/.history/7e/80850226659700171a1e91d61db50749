@@ -1,0 +1,19 @@
+package com.test;
+
+import java.util.List;
+
+import com.dao.AllNetworkTaskDao;
+import com.entities.AllNetworkTask;
+import com.utils.MybatisConfig;
+
+public class Test {
+
+	public static void main(String[] args) {
+		AllNetworkTaskDao allNetworkTaskDao = new AllNetworkTaskDao(MybatisConfig.ServerEnum.development2);
+		List<AllNetworkTask> list = allNetworkTaskDao.getAll();
+		for (AllNetworkTask allNetworkTask : list) {
+			System.out.println(allNetworkTask);
+		}
+	}
+
+}

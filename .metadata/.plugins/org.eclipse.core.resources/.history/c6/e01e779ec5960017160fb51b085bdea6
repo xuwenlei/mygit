@@ -1,0 +1,52 @@
+package com.test;
+
+import java.io.IOException;
+import java.util.Date;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.junit.Test;
+
+import com.dao.AllNetworkTaskMapper;
+import com.dao.MonitorMapper;
+import com.entities.AllNetworkTask;
+import com.entities.Monitor;
+import com.utils.MyUtils;
+
+public class MyBatisTest {
+	
+	/*public SqlSessionFactory getSqlSessionFactory() throws IOException {
+		String resource = "mybatis-config.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		return new SqlSessionFactoryBuilder().build(inputStream);
+	}*/
+
+	@Test
+	public void test() throws IOException {
+		SqlSessionFactory sqlSessionFactory = MyUtils.getSqlSessionFactory("url1");
+		SqlSession openSession = sqlSessionFactory.openSession();
+		try {
+			MonitorMapper mapper = openSession.getMapper(MonitorMapper.class);
+			List<Monitor> list = mapper.getAll();
+			System.out.println(list);
+		} finally {
+			openSession.close();
+		}
+	}
+	
+	@Test
+	public void test2(){
+		SqlSessionFactory sqlSessionFactory = MyUtils.getSqlSessionFactory("url2");
+		SqlSession openSession = sqlSessionFactory.openSession();
+		try {
+			AllNetworkTaskMapper mapper = openSession.getMapper(AllNetworkTaskMapper.class);
+			AllNetworkTask allNetworkTask = new AllNetworkTask(null, "安徽合肥", 123, 123, 123, 123, "百度一下", new Date());
+			mapper.save(allNetworkTask);
+		} finally {
+			openSession.close();
+		}
+		
+	}
+	
+}

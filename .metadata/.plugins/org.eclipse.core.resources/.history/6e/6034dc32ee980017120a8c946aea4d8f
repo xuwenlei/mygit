@@ -1,0 +1,14 @@
+package com.test;
+
+import org.junit.Test;
+
+import com.dao.SpecialDao;
+
+public class MyTest {
+	
+	@Test
+	public void testSpecial(){
+		SpecialDao specialDao = new SpecialDao("develope3");
+	}
+	
+}

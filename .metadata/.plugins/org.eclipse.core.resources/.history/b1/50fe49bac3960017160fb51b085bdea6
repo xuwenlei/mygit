@@ -1,0 +1,12 @@
+package com.dao;
+
+import org.apache.ibatis.annotations.Insert;
+
+import com.entities.AllNetworkTask;
+
+public interface AllNetworkTaskMapper {
+	
+	@Insert("")
+	public void save(AllNetworkTask allNetworkTask);
+	
+}

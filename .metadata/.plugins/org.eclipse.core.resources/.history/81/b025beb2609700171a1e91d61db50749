@@ -1,0 +1,20 @@
+package com.dao;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.entities.AllNetworkTask;
+import com.utils.MybatisConfig;
+import com.utils.MybatisConfig.ServerEnum;
+
+public class AllNetworkTaskDao {
+	
+	public void save(ServerEnum serverEnum,AllNetworkTask allNetworkTask) {
+		SqlSessionFactory sqlSessionFactory = MybatisConfig.getSqlSessionFactory(serverEnum);
+
+		try (SqlSession openSession = sqlSessionFactory.openSession();) {
+			AllNetworkTaskMapper mapper = openSession.getMapper(AllNetworkTaskMapper.class);
+			mapper.save(allNetworkTask);
+		}
+	}
+}

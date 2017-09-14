@@ -1,0 +1,31 @@
+package info.bbd.changcheng.solr.dao;
+
+import info.bbd.changcheng.common.webDomain.SpecialDomain;
+import info.bbd.changcheng.solr.config.MybatisConfig;
+import info.bbd.utils.log.LogbackUtil;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
+
+public class SpecialDao {
+    private static Logger logger = LoggerFactory.getLogger(SpecialDao.class);
+    private final SqlSessionFactory sqlSessionFactory;
+
+    public SpecialDao(MybatisConfig.ServerEnum server) {
+        try {
+            sqlSessionFactory = MybatisConfig.getSqlSessionFactory(server);
+        } catch (RuntimeException e) {
+            logger.error("Exception:{}", LogbackUtil.expection2Str(e));
+            throw new RuntimeException(e);
+        }
+    }
+    public List<SpecialDomain> getSpecial() {
+        try (SqlSession sqlSession = sqlSessionFactory.openSession();) {
+            SpecialMapper specialMapper = sqlSession.getMapper(SpecialMapper.class);
+            return specialMapper.getSpecial();
+        }
+    }
+}

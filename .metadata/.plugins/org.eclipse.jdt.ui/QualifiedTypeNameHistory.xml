@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Select"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Insert"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Param"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.entities.AllNetworkTask"/>
+<fullyQualifiedTypeName name="com.utils.MyUtils"/>
+<fullyQualifiedTypeName name="com.dao.AllNetworkTaskMapper"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Options"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+<fullyQualifiedTypeName name="com.dao.MonitorDao"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="com.utils.MybatisConfig"/>
+<fullyQualifiedTypeName name="com.utils.MybatisConfig.ServerEnum"/>
+<fullyQualifiedTypeName name="com.entities.Monitor"/>
+<fullyQualifiedTypeName name="com.dao.MonitorMapper"/>
+</qualifiedTypeNameHistroy>

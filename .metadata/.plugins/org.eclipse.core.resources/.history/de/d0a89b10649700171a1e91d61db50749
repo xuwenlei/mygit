@@ -1,0 +1,18 @@
+package com.test;
+
+import java.util.List;
+
+import com.dao.AllNetworkTaskDao;
+import com.dao.MonitorDao;
+import com.entities.AllNetworkTask;
+import com.entities.Monitor;
+import com.utils.MybatisConfig;
+
+public class Test {
+
+	public static void main(String[] args) {
+		AllNetworkTaskDao allNetworkTaskDao = new AllNetworkTaskDao();
+		allNetworkTaskDao.
+	}
+
+}

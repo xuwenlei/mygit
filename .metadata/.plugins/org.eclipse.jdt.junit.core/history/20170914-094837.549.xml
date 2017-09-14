@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MyTest.testSpecial" project="test" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testcase name="testSpecial" classname="com.test.MyTest" time="0.554"/>
+</testrun>

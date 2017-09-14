@@ -1,0 +1,38 @@
+package com.test;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
+
+import com.dao.MonitorMapper;
+import com.entities.Monitor;
+
+public class MyBatisTest {
+
+	public SqlSessionFactory getSqlSessionFactory() throws IOException {
+		String resource = "mybatis-config.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		return new SqlSessionFactoryBuilder().build(inputStream);
+	}
+
+
+	@Test
+	public void test() throws IOException {
+		SqlSessionFactory sqlSessionFactory = getSqlSessionFactory();
+		SqlSession openSession = sqlSessionFactory.openSession();
+		try {
+			MonitorMapper mapper = openSession.getMapper(MonitorMapper.class);
+			List<Monitor> list = mapper.getAll();
+			System.out.println(list);
+		} finally {
+			openSession.close();
+		}
+	}
+	
+}

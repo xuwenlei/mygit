@@ -1,0 +1,9 @@
+package com.dao;
+
+import com.entities.AllNetworkTask;
+
+public interface AllNetworkTaskMapper {
+	
+	public void save(AllNetworkTask allNetworkTask);
+	
+}

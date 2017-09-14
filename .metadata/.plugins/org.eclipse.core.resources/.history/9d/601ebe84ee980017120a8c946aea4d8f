@@ -1,0 +1,15 @@
+package com.test;
+
+import org.junit.Test;
+
+import com.dao.SpecialDao;
+import com.utils.MyUtils;
+
+public class MyTest {
+	
+	@Test
+	public void testSpecial(){
+		SpecialDao specialDao = new SpecialDao(MyUtils.ServerEnum.development3);
+	}
+	
+}

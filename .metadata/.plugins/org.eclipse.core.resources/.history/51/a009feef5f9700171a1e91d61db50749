@@ -1,0 +1,25 @@
+package com.test;
+
+import java.util.List;
+
+import com.dao.AllNetworkTaskDao;
+import com.dao.MonitorDao;
+import com.entities.AllNetworkTask;
+import com.entities.Monitor;
+import com.utils.MybatisConfig;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		MonitorDao monitorDao = new MonitorDao();
+		AllNetworkTaskDao allNetworkTaskDao = new AllNetworkTaskDao();
+		List<Monitor> list = monitorDao.getAll(MybatisConfig.ServerEnum.development);
+		for (Monitor monitor : list) {
+			AllNetworkTask allNetworkTask = new AllNetworkTask(null, monitor.getKeywords(), 501, 1825, 6, 0, "中国搜索", monitor.getTimeEnd());
+			allNetworkTaskDao.save(MybatisConfig.ServerEnum.development2, allNetworkTask);
+		}
+
+	}
+
+}

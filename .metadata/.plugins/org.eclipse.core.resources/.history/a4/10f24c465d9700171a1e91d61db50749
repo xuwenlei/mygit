@@ -1,0 +1,14 @@
+package com.test;
+
+import com.dao.MonitorDao;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		MonitorDao monitorDao = new MonitorDao();
+		monitorDao.getAll();
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package com.utils;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class MybatisConfig {
+	
+	private static Logger logger = LoggerFactory.getLogger(MybatisConfig.class);
+
+	public enum ServerEnum {
+		sentiment, localhost
+	}
+
+	private static Map<ServerEnum, SqlSessionFactory> sessionFactorys = new HashMap<ServerEnum, SqlSessionFactory>();
+
+	static {
+		for (ServerEnum server : ServerEnum.values()) {
+			try (InputStream inputStream = Resources.getResourceAsStream("mybatis-tmp.xml");) {
+				sessionFactorys.put(server, new SqlSessionFactoryBuilder().build(inputStream, server.name()));
+			} catch (IOException e) {
+				logger.error("Exception:{}", LogbackUtil.expection2Str(e));
+				throw new RuntimeException(e);
+			}
+		}
+	}
+
+	public static SqlSessionFactory getSqlSessionFactory(ServerEnum server) {
+		return sessionFactorys.get(server);
+	}
+}

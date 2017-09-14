@@ -1,0 +1,24 @@
+package com.utils;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class MyUtils {
+	
+	public static Map<String, SqlSessionFactory> map = new HashMap<String, SqlSessionFactory>();
+	
+	static{
+		try {
+			map.put("url1", new SqlSessionFactoryBuilder().build(Resources.getResourceAsReader("mybatis-config.xml")));
+			map.put("url1", new SqlSessionFactoryBuilder().build(Resources.getResourceAsReader("mybatis-config2.xml")));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

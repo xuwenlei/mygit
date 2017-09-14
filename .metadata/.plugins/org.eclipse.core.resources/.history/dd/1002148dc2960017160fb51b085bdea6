@@ -1,0 +1,9 @@
+package com.entities;
+
+public class AllNetworkTask {
+	
+	private Integer id;
+	private String keyworld;
+	private Integer source;
+	
+}

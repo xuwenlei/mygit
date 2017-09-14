@@ -1,0 +1,24 @@
+package com.utils;
+
+import com.entities.Search;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		
+		/*Map<Integer, Search> searchs = new HashMap<>();
+		searchs.put(0, new Search(500, 1824, "百度搜索"));
+		searchs.put(1, new Search(501, 1825, "中国搜索"));
+		searchs.put(2, new Search(502, 1826, "新浪新闻搜索"));
+		Random random = new Random();
+		int nextInt = random.nextInt(3);
+		Search search = searchs.get(nextInt);
+		System.out.println(search);*/
+		
+		for (int i = 0; i < 30; i++) {
+			Search search = MyUtils.getSearch();
+			System.out.println(search);
+		}
+	}
+	
+}

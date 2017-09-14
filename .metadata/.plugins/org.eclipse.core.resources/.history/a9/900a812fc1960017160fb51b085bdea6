@@ -1,0 +1,19 @@
+package com.utils;
+
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class MyUtils {
+	
+	public static Map<String, SqlSessionFactory> map = new HashMap<String, SqlSessionFactory>();
+	
+	static{
+		map.put("url1", new SqlSessionFactoryBuilder().build(Resources.getResourceAsReader("mybatis-config.xml")));
+	}
+	
+}

@@ -1,0 +1,6 @@
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url1=jdbc:mysql://192.168.31.111:3306/changcheng
+jdbc.url2=jdbc:mysql://192.168.31.111:3306/siteinfo
+jdbc.url2=jdbc:mysql://192.168.31.111:3306/special
+jdbc.username=root
+jdbc.password=root

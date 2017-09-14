@@ -1,0 +1,32 @@
+package com.entities;
+
+import java.util.Date;
+
+public class Monitor {
+	
+	private Integer mid;
+	private String name;
+	private Date timeStrart;
+	private Date timeEnd;
+	private String type;
+	private String keywords;
+	private String excludeWords;
+	private String status;
+	private Integer count;
+	private Integer addCount;
+	private String trend7days;
+	private String recordTableName;
+	private String hotwordTableName;
+	private Double warningNegaPercent;
+	private Integer warningNegaCount;
+	private Integer warningCount;
+	private String warningWord;
+	private String warningResultDesc;
+	private Integer pushMode;
+	private String phoneNum;
+	private String email;
+	private Date lastTime;
+	
+	
+	
+}

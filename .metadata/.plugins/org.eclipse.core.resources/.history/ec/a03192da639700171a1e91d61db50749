@@ -1,0 +1,42 @@
+package com.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.entities.AllNetworkTask;
+import com.utils.MybatisConfig;
+import com.utils.MybatisConfig.ServerEnum;
+
+public class AllNetworkTaskDao {
+	
+	private SqlSessionFactory sqlSessionFactory = null;
+	
+	public AllNetworkTaskDao() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public AllNetworkTaskDao(ServerEnum serverEnum){
+		sqlSessionFactory = MybatisConfig.getSqlSessionFactory(serverEnum);
+	}
+	
+	public void save(ServerEnum serverEnum,AllNetworkTask allNetworkTask) {
+		SqlSessionFactory sqlSessionFactory = MybatisConfig.getSqlSessionFactory(serverEnum);
+
+		try (SqlSession openSession = sqlSessionFactory.openSession();) {
+			AllNetworkTaskMapper mapper = openSession.getMapper(AllNetworkTaskMapper.class);
+			mapper.save(allNetworkTask);
+			openSession.commit();
+		}
+	}
+	
+	public List<AllNetworkTask> getAll(ServerEnum serverEnum){
+		SqlSessionFactory sqlSessionFactory = MybatisConfig.getSqlSessionFactory(serverEnum);
+
+		try (SqlSession openSession = sqlSessionFactory.openSession();) {
+			AllNetworkTaskMapper mapper = openSession.getMapper(AllNetworkTaskMapper.class);
+			return mapper.getAll();
+		}
+	}
+}

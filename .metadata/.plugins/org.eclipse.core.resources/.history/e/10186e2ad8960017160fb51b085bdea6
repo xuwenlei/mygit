@@ -1,0 +1,26 @@
+package com.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.entities.Monitor;
+import com.utils.MybatisConfig;
+import com.utils.MybatisConfig.ServerEnum;
+
+public class MonitorDao {
+	
+	public MonitorDao() {
+		
+	}
+	
+	public MonitorDao(ServerEnum serverEnum){
+		SqlSessionFactory sqlSessionFactory = MybatisConfig.getSqlSessionFactory(serverEnum);
+	}
+	
+	public List<Monitor> getAll(){
+		
+		return null;
+	}
+	
+}

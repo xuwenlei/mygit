@@ -1,0 +1,15 @@
+package com.test;
+
+import com.dao.MonitorDao;
+import com.utils.MybatisConfig;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		MonitorDao monitorDao = new MonitorDao();
+		monitorDao.getAll(MybatisConfig.ServerEnum.development);
+
+	}
+
+}

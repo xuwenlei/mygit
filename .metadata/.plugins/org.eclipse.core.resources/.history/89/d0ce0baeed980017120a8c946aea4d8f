@@ -1,0 +1,16 @@
+package info.bbd.changcheng.solr.dao;
+
+
+import info.bbd.changcheng.common.webDomain.SpecialDomain;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
+
+public interface SpecialMapper {
+    @Select("select keywords,exclude_words,timeEnd," +
+            "hotword_tablename,record_tablename," +
+            "emotionword_tablename,label_tablename from special where timeEnd>now()")
+    public List<SpecialDomain> getSpecial();
+
+
+}

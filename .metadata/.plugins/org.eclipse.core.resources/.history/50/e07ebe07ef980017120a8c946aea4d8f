@@ -1,0 +1,17 @@
+package com.dao;
+
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Select;
+
+import com.entities.SpecialDomain;
+
+public interface SpecialMapper {
+    @Select("select keywords,exclude_words,timeEnd," +
+            "hotword_tablename,record_tablename," +
+            "emotionword_tablename,label_tablename from special where timeEnd>now()")
+    public List<SpecialDomain> getSpecial();
+
+
+}

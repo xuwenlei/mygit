@@ -1,0 +1,11 @@
+package com.dao;
+
+import java.util.List;
+
+import com.entities.Monitor;
+
+public interface MonitorMapper {
+	
+	public List<Monitor> getAll();
+	
+}

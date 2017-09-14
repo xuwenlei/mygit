@@ -6,8 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.entities.Monitor;
-import com.utils.MybatisConfig;
-import com.utils.MybatisConfig.ServerEnum;
+import com.utils.MyUtils;
+import com.utils.MyUtils.ServerEnum;
 
 public class MonitorDao {
 
@@ -18,7 +18,7 @@ public class MonitorDao {
 	}
 
 	public MonitorDao(ServerEnum serverEnum) {
-		sqlSessionFactory = MybatisConfig.getSqlSessionFactory(serverEnum);
+		sqlSessionFactory = MyUtils.getSqlSessionFactory(serverEnum);
 	}
 
 	public List<Monitor> getAll() {
